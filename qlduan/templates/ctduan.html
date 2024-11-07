@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DỰ ÁN: {{ du_an.ten|upper }}</title>
+</head>
+<body>
+  <h1>DỰ ÁN: {{ du_an.ten|upper }}</h1>
+  {% for mess in messages %}
+    {{ mess }} <br>
+  {% endfor %}
+  <br>
+  Ngày bắt đầu: {{ du_an.ngay_bat_dau }} <br>
+  Ngày kết thúc: {{ du_an.ngay_ket_thuc }} <br>
+  Nhân viên: <br>
+  {% for nv in du_an.nhieunhanvien.all %}
+    {{ nv.nhan_vien.ho_ten }} <br>
+  {% endfor %}
+</body>
+</html>

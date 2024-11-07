@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TẤT CẢ NHÂN VIÊN</title>
+</head>
+<body>
+  <h1>TẤT CẢ NHÂN VIÊN</h1>
+  {% for nv in nhieunhanvien %}
+    Tên nhân viên: {{ nv.ho_ten }} <br>
+    Tài khoản: {{ nv.tai_khoan }} <br>
+    Số điện thoại: {{ nv.so_dien_thoai }} <br>
+    Dự án: <br>
+    {% for duan in nv.nhieuduan.all %}
+      <a href="/dsduan/{{ duan.du_an.id }}">{{ duan.du_an.ten }}</a> <br>
+    {% endfor %}
+    <br><br>
+  {% endfor %}
+</body>
+</html>
